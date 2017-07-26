@@ -1,0 +1,37 @@
+{
+    "namespace": "eu.leward.kafka.metrics.avro",
+    "type": "record",
+    "name": "AvroAvgMetric",
+    "fields": [
+        {
+            "name": "cpuUsageSum",
+            "type": "float",
+            "doc" : "Sum of all the cpuUsage entries"
+        },
+        {
+            "name": "cpuUsageCount",
+            "type": "int",
+            "doc" : "Nb of cpuUsage entries"
+        },
+        {
+            "name": "memoryUsageSum",
+            "type": "float",
+            "doc" : "Sum of all the memoryUsage entries"
+        },
+        {
+            "name": "memoryUsageCount",
+            "type": "int",
+            "doc" : "Nb of memoryUsage entries"
+        },
+        {
+            "name": "diskUsageSum",
+            "type": "float",
+            "doc" : "Sum of all the diskUsage entries"
+        },
+        {
+            "name": "diskUsageCount",
+            "type": "int",
+            "doc" : "Nb of diskUsage entries"
+        }
+    ]
+}

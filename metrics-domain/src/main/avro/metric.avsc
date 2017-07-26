@@ -1,0 +1,22 @@
+{
+    "namespace": "eu.leward.kafka.metrics.avro",
+    "type": "record",
+    "name": "AvroMetric",
+    "fields": [
+        {
+            "name": "cpuUsage",
+            "type": "float",
+            "doc" : "CPU usage between 0 and 1"
+        },
+        {
+            "name": "memoryUsage",
+            "type": "float",
+            "doc" : "Memory usage between 0 and 1"
+        },
+        {
+            "name": "diskUsage",
+            "type": "float",
+            "doc" : "Disk usage between 0 and 1"
+        }
+    ]
+}

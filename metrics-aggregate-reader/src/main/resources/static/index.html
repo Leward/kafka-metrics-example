@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kafka Metrics Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body ng-app="metrics">
+
+<div ng-controller="metricsController as metrics">
+    <table>
+        <thead>
+        <tr>
+            <th>Time</th>
+            <th>CPU</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="(time, data) in metrics.values">
+            <td>{{time | date: 'dd MMMM yyyy HH:mm'}}</td>
+            <td>{{data}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <canvas id="line" class="chart chart-line" chart-labels="metrics.labels" chart-data="metrics.cpuValues" chart-options="metrics.options">
+    </canvas>
+
+    <pre>{{metrics.cpuValues | json}}</pre>
+    <pre>{{metrics.labels | json}}</pre>
+
+</div>
+
+<script src="/webjars/angular/1.6.5/angular.min.js"></script>
+<script src="/webjars/chartjs/2.1.3/Chart.js"></script>
+<script src="/webjars/angular-chart.js/1.1.1/angular-chart.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
