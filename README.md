@@ -2,16 +2,13 @@
 
 Download: 
 ```bash
-wget http://packages.confluent.io/archive/3.2/confluent-oss-3.2.1-2.11.tar.gz && /
-  tar -xzf confluent-oss-3.2.1-2.11.tar.gz
+wget https://packages.confluent.io/archive/5.0/confluent-5.0.0-2.11.tar.gz && /
+  tar -xzf confluent-5.0.0-2.11.tar.gz
 ```
 
-In different terminal windows run the following commands to start the different required components: 
-
+Start the Confluent platform: 
 ```bash
-$ ./bin/zookeeper-server-start ./etc/kafka/zookeeper.properties
-$ ./bin/kafka-server-start ./etc/kafka/server.properties
-$ ./bin/schema-registry-start ./etc/schema-registry/schema-registry.properties
+$ ./bin/confluent start
 ```
 
 More details about the Setup on the [Confluent Documentation - Quickstart](http://docs.confluent.io/current/quickstart.html#quickstart)
@@ -40,7 +37,7 @@ You should then see in the logs something like:
 ...
 ```
 
-## Read the produced messages fron command line
+## Read the produced messages from command line
 
 Use `kafka-avro-console-consumer` as messages have been serialized using Avro.
 
