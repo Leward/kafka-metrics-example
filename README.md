@@ -19,7 +19,7 @@ More details about the Setup on the [Confluent Documentation - Quickstart](http:
 You can build the project and run the program in one go:
 
 ```bash
-$ mvn clean package && java -jar metrics-producer/target/metrics-producer-1.0-SNAPSHOT.jar host1 host2 host3 host4 host5 host6 host7 host8 host9
+$ mvn clean package && java -jar metrics-producer/target/metrics-producer-1.0-SNAPSHOT.jar localhost host1 host2 host3 host4 host5 host6 host7 host8 host9
 ```
 
 Provided as arguments the hostnames for which we want to generate metrics so that we have so data to process later on.
@@ -37,7 +37,7 @@ You should then see in the logs something like:
 ...
 ```
 
-## Read the produced messages from command line
+### Read the produced messages from command line
 
 Use `kafka-avro-console-consumer` as messages have been serialized using Avro.
 
@@ -46,3 +46,28 @@ $ bin/kafka-avro-console-consumer --bootstrap-server=localhost:9092 --topic=metr
 ```
 
 ## Run Kafka Stream processing
+
+```bash
+$ java -jar metrics-aggregator/target/metrics-aggregator-1.0-SNAPSHOT.jar
+```
+
+### View result of the Stream processing from command line
+
+```bash
+$ bin/kafka-avro-console-consumer --bootstrap-server=localhost:9092 --topic=avg_metrics2
+```
+
+## Access aggregated metrics from the dashboard
+
+Start the web app:
+
+```bash
+$ java -jar metrics-aggregate-reader/target/metrics-aggregate-reader-1.0-SNAPSHOT.jar
+```
+
+Then browse: http://localhost:8080/ 
+
+![Screenshot of the metrics dashboard](Kafka Metrics Example.png)
+
+The dashboard reads the values for `localhost` only (this is hardcoded), that's why in the first example 
+it is important to generate the metrics for `localhost`. 

@@ -28,11 +28,11 @@
 			<artifactId>metrics-domain</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>eu.leward.kafka</groupId>
-			<artifactId>metrics-serialization</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>eu.leward.kafka</groupId>-->
+			<!--<artifactId>metrics-serialization</artifactId>-->
+			<!--<version>${project.version}</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
@@ -52,6 +52,10 @@
 		<dependency>
 			<groupId>io.confluent</groupId>
 			<artifactId>kafka-avro-serializer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.confluent</groupId>
+			<artifactId>kafka-streams-avro-serde</artifactId>
 		</dependency>
 
 		<dependency>
