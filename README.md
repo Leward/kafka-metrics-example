@@ -67,7 +67,7 @@ $ java -jar metrics-aggregate-reader/target/metrics-aggregate-reader-1.0-SNAPSHO
 
 Then browse: http://localhost:8080/ 
 
-![Screenshot of the metrics dashboard](Kafka Metrics Example.png)
+![Screenshot of the metrics dashboard](Kafka%20Metrics%20Example.png)
 
 The dashboard reads the values for `localhost` only (this is hardcoded), that's why in the first example 
 it is important to generate the metrics for `localhost`. 
