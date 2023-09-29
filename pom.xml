@@ -24,7 +24,7 @@
     </parent>
 
     <properties>
-        <avro.vesion>1.8.2</avro.vesion>
+        <avro.vesion>1.11.3</avro.vesion>
         <kafka.version>2.0.0</kafka.version>
         <confluent.version>5.0.0</confluent.version>
         <maven.compiler.target>1.8</maven.compiler.target>
